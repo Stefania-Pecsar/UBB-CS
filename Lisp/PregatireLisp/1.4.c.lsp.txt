@@ -1,0 +1,20 @@
+(defun inverseaza-atomi (lista)
+  (cond
+    ((null lista) nil)
+    ((listp (car lista))
+     (cons (inverseaza-atomi (car lista)) (inverseaza-atomi (cdr lista))))
+    
+    (t
+     (append (reverse (take-atomi lista)) (inverseaza-atomi (drop-atomi lista))))))
+
+(defun take-atomi (lista)
+  (cond
+    ((null lista) nil)
+    ((atom (car lista)) (cons (car lista) (take-atomi (cdr lista))))
+    (t nil)))
+
+(defun drop-atomi (lista)
+  (cond
+    ((null lista) nil)
+    ((atom (car lista)) (drop-atomi (cdr lista)))
+    (t lista)))

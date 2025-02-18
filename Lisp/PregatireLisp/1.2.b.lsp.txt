@@ -1,0 +1,6 @@
+(defun vfAtom(l elem)
+	(cond
+		((null l) nil)
+		((AND (atom (car l))(equal (car l) elem )) T)
+		((listp (car l)) (or (vfAtom (car l) elem)(vfATom (cdr l) elem)))
+		(t (vfAtom (cdr l) elem))))

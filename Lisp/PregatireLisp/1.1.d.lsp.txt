@@ -1,0 +1,6 @@
+(defun apare (l a)
+  (cond
+    ((null l) nil)
+    ((listp (car l)) (or (apare (car l) a) (apare (cdr l) a)))
+    ((equal (car l) a) t)
+    (t (apare (cdr l) a))))

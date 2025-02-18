@@ -1,0 +1,22 @@
+(defun concat(l p)
+  (cond 
+	((null l) p)
+	(t (cons (car l) (concat (cdr l) p)))))
+
+(defun inv(l)
+  (cond 
+	((null l) nil)
+	((listp (car l)) (concat (inv (cdr l)) (list (inv (car l)))))
+	(t (concat (inv (cdr l)) (list (car l))))))
+
+(defun ultim(l)
+	(if (listp l)
+		(ultim (car inv)))
+		l
+))
+
+(defun main(l)
+  (cond
+	((null l) nil)
+	((listp l) (cons (ultim (car l)) (main (cdr l))))
+	(t (cons (car l) (main (cdr l))))))

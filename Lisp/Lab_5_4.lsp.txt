@@ -1,0 +1,10 @@
+; suma(l) =
+; = l, daca l e numar
+; = 0, daca l este atom
+; = suma(l1) + suma(l2) + ... + suma(ln), altfel (l este o lista de forma l1..ln)
+
+(defun suma(l)
+  (cond 
+	((numberp l) l)
+	((atom l) 0)
+	(t (apply '+(mapcar #'suma l)))))

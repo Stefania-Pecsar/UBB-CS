@@ -1,0 +1,10 @@
+(defun maxim (a b)
+  (if (> a b) a b))
+
+(defun adancime (lst)
+  (if (null lst)
+      0
+      (if (listp (car lst))
+          (maxim (+ 1 (adancime (car lst)))
+                 (adancime (cdr lst)))
+          (maxim 1 (adancime (cdr lst))))))

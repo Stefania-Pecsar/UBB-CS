@@ -1,0 +1,15 @@
+(defun concat(l1 l2)
+	(cond 
+		((null l1) l2)
+		(t (cons (car l1) (concat (cdr l1) l2)))))
+
+(defun invers(l)
+	(cond
+		((null l) nil)
+		((lisp (car l)) (concat(invers (cdr l)) (list (inv (car l)))))
+		(t (concat (invers (cdr l)) (list (car l))))))
+
+(defun suma (v1 v2)
+	(cond 
+		((null v1) v2)
+		(t (cons (+ (car v1) (car v2)) (suma (cdr v1) (cdr v2))))))

@@ -1,0 +1,6 @@
+(defun mergesort(l k)
+	(cond 
+		((null l) k)
+		((null k) l)
+		((<= (car l) (car k)) (cons (car l) (mergesort (cdr l) k)))
+		(t (cons (car  k) (mergesort l (cdr k))))))

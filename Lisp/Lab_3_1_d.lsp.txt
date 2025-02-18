@@ -1,0 +1,13 @@
+(defun intersectie (lst1 lst2)
+  (if (null lst1)
+	'()
+	(if (exista (car lst1) lst2)
+	    (cons (car lst1) (intersectie (cdr lst1) lst2))
+	    (intersectie (cdr lst1) lst2))))
+
+(defun exista (x lst)
+  (if (null lst)
+	nil
+	(if (equal x (car lst))
+	    t
+	    (exista x (cdr lst)))))

@@ -1,0 +1,5 @@
+(defun lista(l)
+  (cond 
+	((null l) 1)
+	((listp (car l)) (+ (lista (car l))(lista (cdr l))))
+	(t (lista (cdr l)))))

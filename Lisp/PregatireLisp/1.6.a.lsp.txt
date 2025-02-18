@@ -1,0 +1,11 @@
+(defun twiceNthElem(l n pos)
+  (cond
+    ((null l) nil)
+    ((equal n pos) (cons (car l) (cons (car l) (twiceNthElem (cdr l) n (+ 1 pos)))))
+    (t (cons (car l) (twiceNthElem (cdr l) n (+ 1 pos))))
+  )
+)
+
+(defun main(l n)
+  (twiceNthElem l n 1)
+)
