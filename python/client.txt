@@ -1,7 +1,0 @@
-1;Stefania;2311
-2;Maria;2233
-3;Dana;1112
-4;Ana;1123
-5;Sofia;9922
-6;Sara;1255
-7;Pexsar;6040806204989
