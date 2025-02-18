@@ -1,0 +1,17 @@
+% 9
+% a
+
+consec(X,Y):-
+    Y is X + 1.
+
+sterge([],[]).
+
+sterge([X],[X]).
+
+sterge([X,Y|Tail],Rez):-
+    consec(X,Y),
+    sterge([Y|Tail],Rez).
+
+sterge([X,Y|Tail],Rez):-
+    \+ consec(X,Y),!,
+    sterge([Y|Tail],Rez).

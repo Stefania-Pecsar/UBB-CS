@@ -1,0 +1,16 @@
+submultime([],[]).
+submultime([H|Puncte], [H|Submultime]):-submultime(Puncte, Submultime).
+submultime([_|Puncte], Submultime):-submultime(Puncte, Submultime).
+
+toate_suma([],0).
+toate_suma([H|T], Suma):-
+    toate_suma(T, Noua_Suma),
+    Suma is Noua_Suma + H.
+
+
+verific(Submultime, Suma):-
+    toate_suma(Submultime, Suma_submultime),
+    Suma = Suma_submultime.
+
+gaseste_toate(Puncte, Toate_submultimile, S):-
+    findall(Submultime, (submultime(Puncte, Submultime), verific(Submultime, S)), Toate_submultimile).

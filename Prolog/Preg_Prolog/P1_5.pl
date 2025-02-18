@@ -1,0 +1,28 @@
+%5
+%a
+
+sterge(_,[],[]).
+sterge(Atom,[Atom|Tail],Rez):-
+    sterge(Atom,Tail,Rez).
+
+sterge(Atom,[H|Tail],[H|Rez]):-
+    Atom \= H,
+    sterge(Atom,Tail,Rez).
+
+%b
+
+nr_aparitii(_,[],0).
+
+nr_aparitii(X,[X|Tail],N):-
+    nr_aparitii(X,Tail,N1),
+    N is N1 + 1.
+
+nr_aparitii(X,[_|Tail],N):-
+    nr_aparitii(X,Tail,N).
+
+nr([],[]).
+
+nr([H|Tail],[[H,N]|Rez]):-
+    nr_aparitii(H,[H|Tail],N),
+    sterge(H,Tail,Tx),
+    nr(Tx,Rez),!.

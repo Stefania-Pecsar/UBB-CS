@@ -1,0 +1,19 @@
+% 15
+% a
+
+par([]).
+
+par([_,_|Tail]):-
+    par(Tail).
+
+% b
+
+min([],_,[]).
+
+min([H|Tail],Min,Rez):-
+    H < Min,
+    min(Tail,H,Rez).
+
+min([H|Tail],Min,Rez):-
+    H >= Min,
+    min(Tail,Min,Rez).

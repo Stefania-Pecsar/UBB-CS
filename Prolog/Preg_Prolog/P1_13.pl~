@@ -1,0 +1,20 @@
+% 13
+% 1
+
+multime_ultime_aparitii(Lista, Multime) :-
+    eliminare_ultime_duplicate(Lista, Multime).
+
+eliminare_ultime_duplicate([], []).
+
+eliminare_ultime_duplicate([H|T], Rezultat) :-
+    membru(H, T),
+    eliminare_ultime_duplicate(T, Rezultat).
+
+eliminare_ultime_duplicate([H|T], [H|Rezultat]) :-
+    \+ membru(H, T),
+    eliminare_ultime_duplicate(T, Rezultat).
+
+membru(X, [X|_]).
+
+membru(X, [_|T]) :-
+    membru(X, T).

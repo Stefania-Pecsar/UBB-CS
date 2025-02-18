@@ -1,0 +1,17 @@
+% 1
+% a
+
+exista(_,[]):-false.
+exista(X,[X|_]).
+exista(X,[_|T]):-
+    exista(X,T).
+
+diferenta([],_,[]).
+
+diferenta([H|Tail],N,[H|Rez]):-
+    \+exista(H, N),
+    diferenta(Tail,N,Rez).
+
+diferenta([H|Tail],N,Rez):-
+    exista(H,N),
+    diferenta(Tail,N,Rez).
