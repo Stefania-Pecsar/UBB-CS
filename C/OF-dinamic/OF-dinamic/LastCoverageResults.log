@@ -1,0 +1,21 @@
+[2024-03-27 13:47:54] [info] Start Program:
+Path:"C:\Users\Ivona\Facultate\Probleme C\OF-dinamic\x64\Debug\OF-dinamic.exe"
+Arguments:
+Working directory: "C:\Users\Ivona\Facultate\Probleme C\OF-dinamic\OF-dinamic"
+Modules: Selected: C:\Users\Ivona\Facultate\Probleme C\OF-dinamic\x64\Debug\OF-dinamic.exe Excluded: 
+Sources: Selected: C:\Users\Ivona\Facultate\Probleme C\OF-dinamic Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Ivona\AppData\Local\Temp\thgy2huj.sce 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2024-03-27 13:47:54] [info] Module: C:\Users\Ivona\Facultate\Probleme C\OF-dinamic\x64\Debug\OF-dinamic.exe is selected because it matches selected pattern: C:\Users\Ivona\Facultate\Probleme C\OF-dinamic\x64\Debug\OF-dinamic.exe
+[2024-03-27 13:47:55] [info] ----------------------------------------------------
+[2024-03-27 13:47:55] [info] Coverage binary generated in file: C:\Users\Ivona\AppData\Local\Temp\thgy2huj.sce
+[2024-03-27 13:47:55] [info] ----------------------------------------------------
