@@ -1,0 +1,83 @@
+import csv
+
+def mean(values):
+    return sum(values) / len(values)
+
+def standard_deviation(values, mean_value):
+    variance = sum((x - mean_value) ** 2 for x in values) / len(values)
+    return variance ** 0.5
+
+def normalize(values):
+    mean_value = mean(values)
+    std_dev = standard_deviation(values, mean_value)
+    if std_dev == 0:
+        return [mean_value  for _ in values]
+    return [(x - mean_value) / std_dev for x in values]
+
+def load_data1(file_path, input_var1, output_var):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        header = next(reader)
+        data = [row for row in reader]
+    
+    idx1, idx_out = header.index(input_var1), header.index(output_var)
+    
+    inputs1 = [float(row[idx1]) if row[idx1] else None for row in data]
+    outputs = [float(row[idx_out]) for row in data]
+    
+    mean1 = mean([x for x in inputs1 if x is not None])
+    inputs1 = [x if x is not None else mean1 for x in inputs1]
+    
+    inputs1, outputs = normalize(inputs1), normalize(outputs)
+    return inputs1,  outputs
+
+def train_test_split1(inputs1, outputs, train_ratio=0.8):
+    train_size = int(len(inputs1) * train_ratio)
+    
+    train_x1 = inputs1[:train_size]
+    train_y = outputs[:train_size]
+    
+    test_x1 = inputs1[train_size:]
+    test_y = outputs[train_size:]
+    
+    return train_x1,  train_y, test_x1,  test_y
+
+def compute_coefficients1(train_x1, train_y):
+    n = len(train_x1)
+    sum_x = sum(train_x1)
+    sum_y = sum(train_y)
+    sum_xy = sum(xi * yi for xi, yi in zip(train_x1, train_y))
+    sum_x_sq = sum(xi ** 2 for xi in train_x1)
+    
+    denom = sum_xy - (sum_x * sum_y) / n
+    nr = sum_x_sq - (sum_x ** 2) / n
+    if nr == 0:
+        return (mean(train_y),0.0)
+    w1 = nr / denom
+    
+    w0 = (sum_y - w1 * sum_x) / n
+    return w0, w1
+
+def predict1(w0, w1,  x1):
+    return [w0 + w1 * xi1 for xi1 in x1]
+
+def mean_squared_error(actual, predicted):
+    return sum((p-a)  for a, p in zip(actual, predicted)) / len(actual)
+
+# Load data
+file_path = 'D:/v1_world-happiness-report-2017.csv'
+inputs1, outputs = load_data1(file_path,  'Family','Happiness.Score' )
+
+# Split into training and validation
+train_x1,  train_y, test_x1, test_y = train_test_split1(inputs1, outputs)
+
+# Train model
+w0, w1  = compute_coefficients1(train_x1,  train_y)
+print(f'The learnt model: f(x) =', w0, ' + ', w1, ' * x1 ')
+
+# Predict on test data
+test_predictions = predict1(w0, w1, test_x1, )
+
+# Compute error
+error = mean_squared_error(test_y, test_predictions)
+print('Prediction error:', error)
