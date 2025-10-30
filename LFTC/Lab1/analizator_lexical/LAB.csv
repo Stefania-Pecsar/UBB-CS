@@ -1,0 +1,11 @@
+Index,Value,CodAtom,Atom
+0,std,0,ID
+1,circle,0,ID
+2,r,0,ID
+3,c,0,ID
+4,pi,0,ID
+5,3.14,1,CONST
+6,Introdu raza cercului: ,1,CONST
+7,Perimetrul cercului este: ,1,CONST
+8,2,1,CONST
+9,\nAria cercului este: ,1,CONST
