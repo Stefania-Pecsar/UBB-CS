@@ -1,0 +1,4 @@
+﻿  cmmdc.cpp
+  LINK : C:\Users\Administrator\Fac\AN 3\LFTC\Lab1\raza\x64\Debug\raza.exe not found or not built by the last incremental link; performing full link
+raza.obj : error LNK2005: main already defined in cmmdc.obj
+C:\Users\Administrator\Fac\AN 3\LFTC\Lab1\raza\x64\Debug\raza.exe : fatal error LNK1169: one or more multiply defined symbols found
