@@ -1,0 +1,6 @@
+int a, b, c;
+cin >> a;
+cin >> b;
+c = 0;
+c = a + b - 3 * 4 + c;
+cout << c;
