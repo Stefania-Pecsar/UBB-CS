@@ -1,0 +1,8 @@
+Type,NOOfReaderThreads,NOOfWriterThreads,Time
+sequential,0,0,90.56505
+parallel,1,4,45.35318
+parallel,1,8,49.85913
+parallel,1,16,47.16636
+parallel,2,4,48.73512
+parallel,2,8,54.47349
+parallel,2,16,52.70148

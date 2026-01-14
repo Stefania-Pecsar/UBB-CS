@@ -1,0 +1,8 @@
+(defun inserare (l a poz)
+	(cond 
+		((null l ) nil)
+		((equal (mod poz 2) 0) (cons (car l) (cons a (inserare (cdr l) a (+ 1 poz)))))
+		(t ( cons (car l) (inserare (cdr l) a (+ 1 poz))))))
+
+(defun main(l a)
+	(inserare l a 1))

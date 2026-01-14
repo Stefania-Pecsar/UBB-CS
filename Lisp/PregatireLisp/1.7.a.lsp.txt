@@ -1,0 +1,5 @@
+(defun liniar(l)
+  (cond
+	((null l) t)
+	((listp (car l)) nil)
+	(t(liniar (cdr l)))))

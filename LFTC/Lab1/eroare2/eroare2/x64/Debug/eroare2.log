@@ -1,0 +1,4 @@
+﻿  eroare2.cpp
+C:\Users\Administrator\Fac\AN 3\LFTC\Lab1\eroare2\eroare2\eroare2.cpp(7,9): warning C4101: 'a': unreferenced local variable
+C:\Users\Administrator\Fac\AN 3\LFTC\Lab1\eroare2\eroare2\eroare2.cpp(7,12): warning C4101: 'b': unreferenced local variable
+  eroare2.vcxproj -> C:\Users\Administrator\Fac\AN 3\LFTC\Lab1\eroare2\x64\Debug\eroare2.exe

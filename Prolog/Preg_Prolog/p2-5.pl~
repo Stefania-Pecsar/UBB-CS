@@ -1,0 +1,32 @@
+\% 5
+% a
+
+max([H|Tail],Max):-
+    max_aux(Tail,H,Max).
+
+max_aux([],Max,Max).
+
+max_aux([H|Tail],MaxCurent,Max):-
+    H > MaxCurent,
+    max_aux(Tail,H,Max).
+
+max_aux([H|Tail],MaxCurent,Max):-
+    H =< MaxCurent,
+    max_aux(Tail,MaxCurent,Max).
+
+pozitii_max(Lista,Poz):-
+    max(Lista,Max),
+    poz_max(Lista,Max,1,Poz).
+
+poz_max([],_,_,[]).
+
+poz_max([H|T],Max,PozC,[PozC|Poz]):-
+    H =:= Max,
+    P1 is PozC + 1,
+    poz_max(T,Max,P1,Poz).
+
+poz_max([H|T],Max,PozC,Poz):-
+    H=\=Max,
+    P1 is PozC + 1,
+    poz_max(T,Max,P1,Poz).
+

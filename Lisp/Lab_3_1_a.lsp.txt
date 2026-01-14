@@ -1,0 +1,10 @@
+(defun produs (v1 v2)
+  (if (or (null v1) (null v2))
+      0
+      (+ (if (and (numberp (car v1)) (numberp (car v2)))
+             (* (car v1) (car v2))
+             0)
+         (produs (cdr v1) (cdr v2)))))
+
+
+

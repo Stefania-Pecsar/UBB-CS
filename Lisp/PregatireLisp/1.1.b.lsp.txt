@@ -1,0 +1,14 @@
+(defun concatenare (l p)
+  (cond 
+    ((null l) p)
+    (t (concatenare (cdr l) (cons (car l) p)))))
+
+(defun getAtomi (l)
+  (cond 
+    ((null l) nil)
+    ((listp (car l)) (concatenare (getAtomi (car l)) (getAtomi (cdr l))))
+    (t (cons (car l) (getAtomi (cdr l))))))
+
+
+(defun getAtomiInversati (l)
+  (getAtomi l))

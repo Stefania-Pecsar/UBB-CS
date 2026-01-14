@@ -1,0 +1,10 @@
+(defun myMerge (l p)
+  (cond
+    ((null l) p)
+    ((null p) l)
+    ((< (car l) (car p)) (cons (car l) (myMerge (cdr l) p)))
+    ((> (car l) (car p)) (cons (car p) (myMerge l (cdr p))))
+    ((= (car l) (car p)) (cons (car l) (myMerge (cdr l) (cdr p))))
+  )
+)
+--liste sortate

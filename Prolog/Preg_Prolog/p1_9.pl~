@@ -1,0 +1,19 @@
+% 9
+% a
+
+intersectie([], _, []).
+
+intersectie([H|Tail], Y, [H|XTail]) :-
+    exista(H, Y),!,
+    intersectie(Tail, Y, XTail).
+
+intersectie([H|Tail], Y, XTail) :-
+    \+ exista(H, Y),
+    intersectie(Tail, Y, XTail).
+
+exista(_, []).
+
+exista(X, [X|_]).
+
+exista(X, [_|Tail]) :-
+    exista(X, Tail).

@@ -1,0 +1,9 @@
+q0,qB,qA1,qA2
+a,b
+q0
+q0,qB,qA2
+q0->qA1,a
+q0->qB,b
+qB->qB,b
+qA1->qA2,a
+qA2->qA2,a

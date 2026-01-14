@@ -1,0 +1,11 @@
+(defun maxim(a b)
+	(cond 
+		((not (numberp a)) b)
+		((not (numberp b)) a)
+		((> a b) a)
+		(t b)))
+
+(defun maxlist(l)
+	(cond 
+		((null l) nil)
+		(t (maxim (car l) (maxlist (cdr l))))))

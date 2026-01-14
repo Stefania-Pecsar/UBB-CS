@@ -1,0 +1,26 @@
+(defun div(a b)
+  (cond
+	((= a 0) b)
+	((= b 0) a)
+	((= a b) a)
+	((> a b) (mod a b))
+	(t (mod b a))))
+(defun lista(l)
+  (cond
+	((null l) nil)
+	((numberp l) l)
+	((listp l) (lista l))
+	((atom (car l)) 1)
+	(t (lista l))))
+
+
+(defun divlista(l)
+  (cond 
+	((null l) nil)
+	((AND (numberp (car l)) (numberp (cadr l))) (div (car l) (cadr l)))
+	()))
+
+(defun produs(a b)
+  (cond 
+	((OR (= a 0) (= b 0)) 0)
+	(t (* a b))))

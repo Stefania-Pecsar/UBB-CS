@@ -1,0 +1,11 @@
+(defun myAppend (l1 l2)
+  (cond
+    ((null l1) l2)
+    (T (cons (car l1) (myAppend (cdr l1) l2)))))
+
+(defun substituie(e r l)
+	(cond
+		((null l) ())
+		((listp (car l)) (cons (substituie e r (car l)) (substituie e r (cdr l))))
+		((equal e (car l)) (myAppend r (substituie e r (cdr l))))
+		(t (cons (car l) (substituie e r (cdr l))))))
