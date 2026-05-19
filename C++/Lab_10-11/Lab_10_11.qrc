@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Lab_10_11.cpp</file>
+    </qresource>
+</RCC>

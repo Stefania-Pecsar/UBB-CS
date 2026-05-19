@@ -1,0 +1,14 @@
+(defun transformMultime(l)
+  (cond
+    ((null l) nil)
+    (t (cons (car l) (transformMultime (removeAparente (cdr l) (car l)))))
+  )
+)
+
+(defun removeAparente(l e)
+  (cond 
+    ((null l) nil)
+    ((= (car l) e) (removeAparente (cdr l) e))
+    (t (cons (car l) (removeAparente (cdr l) e)))
+  )
+)

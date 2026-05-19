@@ -1,0 +1,12 @@
+% 12
+% a
+
+inlocuiesti(_,_,[],[]).
+
+inlocuieste(EV,EN,[H|Tail],Rez):-
+    H =:= EV,
+    inlocuieste(EV,EN,Tail,Rez).
+
+inlocuieste(EV,EN,[H|Tail],Rez):-
+    H\=EV,
+    inlocuieste(EV,EN,Tail,Rez).

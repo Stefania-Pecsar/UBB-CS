@@ -1,0 +1,4 @@
+(defun subliste(l)
+	(cond
+		((atom l) nil)
+		(t (apply 'append (list l) (mapcar 'subliste l)))))

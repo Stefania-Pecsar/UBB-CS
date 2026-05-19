@@ -1,0 +1,23 @@
+(defun primaAp(l e elem)
+  (cond
+	((null l) nil)
+	((equal e (car l)) (cons elem (cdr l)))
+	(t (cons (car l) (primaAp (cdr l) e elem)))))
+--liniar
+
+
+(defun cauta(l e)
+  (cond
+	((null l) nil)
+	((equal (car l) e) t)
+	(t (cauta (cdr l) e))))
+
+(defun firstOccReplace(l elem newElem)
+  (cond
+    ((null l) nil)
+    ((equal (car l) elem) (cons newElem (cdr l)))
+    ((and (listp (car l)) (cauta (car l) elem)) (cons (firstOccReplace (car l) elem newElem) (cdr l)))
+    (t (cons (car l) (firstOccReplace (cdr l) elem newElem)))
+  )
+)
+--neliniar

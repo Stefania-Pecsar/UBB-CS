@@ -1,0 +1,112 @@
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+cmake-build-debug/
+.vs/
+obj/
+
+# Compiled Java bytecode
+*.class
+
+# Compiled C++ files
+*.out
+*.app
+*.exe
+
+# Compiled C# files
+*.dll
+*.exe
+
+# Android
+build/
+local.properties
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/gradle.xml
+/.idea/dictionaries
+/.idea/libraries
+
+# IntelliJ
+.idea/
+
+# Visual Studio
+.vscode/
+*.suo
+*.ntvs*
+*.nupkg
+*.pfx
+*.snk
+*.user
+*.userosscache
+*.sln.docstates
+
+# DataSpell
+/__pycache__/
+/.data/
+
+# DataGrip
+/.ideaData/
+*.sqlite
+
+# JetBrains IDEs
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Kotlin
+*.kotlin_module
+
+# Gradle
+.gradle/
+/build/
+
+# Node
+/node_modules/
+node_modules
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+*.env
+
+.DS_Store

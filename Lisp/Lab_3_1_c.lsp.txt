@@ -1,0 +1,31 @@
+(defun elimina (lst)
+  (elimina_dubluri lst '()))
+
+(defun elimina_dubluri (lst rezultat)
+  (if (null lst)
+      rezultat
+      (if (exista (car lst) rezultat)
+          (elimina_dubluri (cdr lst) rezultat)
+          (elimina_dubluri (cdr lst) (cons (car lst) rezultat)))))
+
+(defun exista (x lst)
+  (if (null lst)
+      nil
+      (if (eq x (car lst))
+          t
+          (exista x (cdr lst)))))
+
+(defun sorteaza (lst)
+  (if (null lst)
+      '()
+      (sortare (car lst) (sorteaza (cdr lst)))))
+
+(defun sortare (x lst)
+  (if (null lst)
+      (list x)
+      (if (< x (car lst))
+          (cons x lst)
+          (cons (car lst) (sortare x (cdr lst))))))
+
+(defun sortare_fara_dubluri (lst)
+  (sorteaza (elimina_dubluri lst '())))

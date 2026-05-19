@@ -1,0 +1,30 @@
+(defun myGCD(a b)
+  (cond
+    ((not (numberp a)) b)
+    ((not (numberp b)) a)
+    ((= 0 b) a)
+    (t (myGCD b (mod a b)))
+  )
+)
+
+(defun lookForNumbers(l)
+  (cond
+    ((null l) nil)
+    ((listp (car l)) (or (lookForNumbers (car l)) (lookForNumbers (cdr l))))
+    ((numberp (car l)) T)
+    (t (lookForNumbers (cdr l)))
+  )
+)
+
+(defun gcdForAllNumbers(l)
+  (cond
+    ((null (cdr l)) (car l))
+    ((listp (car l)) (myGCD (gcdForAllNumbers (car l)) (gcdForAllNumbers (cdr l))))
+    (t (myGCD (car l) (gcdForAllNumbers (cdr l))))
+  )
+)
+
+(defun main(l)
+  (cond
+    ((lookForNumbers l) (gcdForAllNumbers l))
+    (t 1)))

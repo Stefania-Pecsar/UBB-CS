@@ -1,0 +1,18 @@
+% Sa se stearga duplicatele
+
+exista(_,[]).
+
+exista(E,[E|_]).
+
+exista(E,[_|Tail]):-
+    exista(E,Tail).
+
+elim_dup([],[]).
+
+elim_dup([H|Tail],[H|Rez]):-
+    \+exista(H,Tail),
+    elim_dup(Tail,Rez).
+
+elim_dup([H|Tail],Rez):-
+    exista(H,Tail),
+    elim_dup(Tail,Rez).

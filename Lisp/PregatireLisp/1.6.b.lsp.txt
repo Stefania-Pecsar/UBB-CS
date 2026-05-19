@@ -1,0 +1,13 @@
+(defun concatenare (l p)
+  (cond
+	((null l) p)
+	(t (cons (car l) (concatenare (cdr l) p)))))
+
+(defun association(l p)
+  (cond
+    ((and (null l) (null p)) nil)
+    ((null l) (concatenare (list (cons nil (car p))) (association nil (cdr p) )))
+    ((null p) (concatenare (list (cons (car l) nil)) (association (cdr l) nil )))
+    (t (concatenare (list (cons (car l) (car p))) (association (cdr l) (cdr p) )))
+  )
+)

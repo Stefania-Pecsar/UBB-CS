@@ -1,0 +1,53 @@
+% impar(N: intreg)
+% N: numarul pe care il verificam daca e impar sau nu
+% model de flux: (i,i)
+impar(X):-
+    1 is X mod 2.
+
+%cmmdc(A: intreg,B: intreg, C: intreg)
+%A: impartitor
+%B: deimpartit
+%C: divizor
+%model de flux (i,i,o)
+cmmdc(A,0,A).
+
+cmmdc(A,B,C):-
+    B > 0,
+    Div is A mod B,
+    cmmdc(B,C,Div).
+
+%div_list(L: lista,Poz: intreg, Rez: divizorul)
+%L: lista numerelor
+%Poz: pozitia pe care este elementul
+%Rez: cmmdc
+%model de flux(i,i,o)
+div_list([],1,_).
+
+div_list([H|Tail],Poz,Rez):-
+    impar(Poz),
+
+    cmmdc(H,Rez,),
+    Poz1  is Poz + 1,
+    div_list(Tail,Poz1,Rez).
+
+%inlocuire(L: lista,Elem: intreg, Rez: list)
+%L lista in care se cauta numarul
+%Elem elementul de inlocuit
+%Rez lista rezultat
+%model de flux( i,i,o)
+inlocuire([],_,[]).
+inlocuire([H|Tail],Elem,Rez):-
+    H =:= Elem,
+    inlocuire(Tail,Elem,[Elem|Rez]).
+
+inlocuire([H|Tail],Elem,Rez):-
+    H \= Elem,
+    inlocuire(Tail,Elem,Rez).
+
+% rezultat( L: lista, Rez: lista)
+% L lista in care se cauta
+% Rez lista crae se returneaza
+% model de flux(i,o)
+
+rezultat(L,Rez):-
+    inlocuire(L,Elem,Rez).

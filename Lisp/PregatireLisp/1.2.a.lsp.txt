@@ -1,0 +1,9 @@
+(defun selecteaza (l n poz)
+	(cond
+		((null l) nil)
+		((= n poz) (car l))
+		(t (selecteaza (cdr l) n (+ poz 1)))))
+		
+
+(defun main(l n)
+	(selecteaza l n 1))
