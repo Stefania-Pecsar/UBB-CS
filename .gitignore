@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Compiled files
 *.class
 *.dll
@@ -110,3 +111,8 @@ env/
 *.env
 
 .DS_Store
+=======
+**/bin/ 
+**/obj/ 
+**/Debug/ 
+>>>>>>> Stashed changes
