@@ -1,0 +1,3 @@
+ftp_server,username,password,expected_result
+localhost,vvta1,vvta1,success
+localhost,vvta1,wrongpassword,failure
